@@ -65,6 +65,41 @@ Or use an absolute path:
 pip install -r "C:\path\to\Youtube\requirements.txt"
 ```
 
+## Troubleshooting: `ai_video_generator.py` not found
+
+If you see:
+
+```
+...python.exe: can't open file 'C:\Users\...\ai_video_generator.py': [Errno 2] No such file or directory
+```
+
+it means you are running the command from the wrong folder.
+
+In Windows Terminal, go to the repo folder first:
+
+```powershell
+cd "C:\path\to\Youtube"
+dir
+```
+
+You should see both `ai_video_generator.py` and `requirements.txt`.
+
+Then run:
+
+```powershell
+python .\ai_video_generator.py `
+  --prompt "cinematic drone shot of a futuristic city at sunrise, ultra detailed" `
+  --duration-seconds 30 `
+  --fps 8 `
+  --output .\outputs\city_30s.mp4
+```
+
+Or run with an absolute script path:
+
+```powershell
+python "C:\path\to\Youtube\ai_video_generator.py" --prompt "your prompt" --output "C:\path\to\Youtube\outputs\video.mp4"
+```
+
 ## Usage
 
 ### 1) Generate from a text prompt (Windows Terminal)
