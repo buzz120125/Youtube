@@ -35,6 +35,36 @@ pip install -r requirements.txt
 
 > First run downloads model weights (several GB).
 
+
+## Troubleshooting: `requirements.txt` not found
+
+If you see:
+
+```
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+```
+
+it means your terminal is not in the project folder that contains `requirements.txt`.
+
+In Windows Terminal:
+
+```powershell
+cd "C:\path\to\Youtube"
+dir
+```
+
+You should see `requirements.txt` in the file list. Then run:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Or use an absolute path:
+
+```powershell
+pip install -r "C:\path\to\Youtube\requirements.txt"
+```
+
 ## Usage
 
 ### 1) Generate from a text prompt (Windows Terminal)
